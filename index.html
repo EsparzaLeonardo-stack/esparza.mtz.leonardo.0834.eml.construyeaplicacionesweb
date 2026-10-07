@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda Apple</title>
+</head>
+<body>
+
+    <!-- Encabezado principal con el nombre de la tienda -->
+    <header align="center">
+        <h1>Tienda Apple</h1>
+    </header>
+
+    <!-- Barra de navegación con opciones que parecen enlaces pero no llevan a otras páginas -->
+    <nav align="center">
+        <a href="#">iPhone 17 Pro Max</a> |
+        <a href="#">Apple Vision Pro 2</a> |
+        <a href="#">AirPods Max</a> |
+        <a href="#">Mac Studio</a> |
+        <a href="#">HomePod</a>
+    </nav>
+
+    <!-- Botón / Enlace derecho para ir a la sección de contacto -->
+    <div align="right">
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <br>
+
+    <!-- Sección principal: Tabla con la lista de productos -->
+    <div align="center">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th align="center" width="250">Ilustración</th>
+                    <th align="left">Modelo</th>
+                    <th align="left">Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Producto 1: iPhone 17 Pro Max -->
+                <tr>
+                    <td align="center" width="250">
+                        <img src="https://i.ebayimg.com/images/g/mTUAAOSwA8pgDhSr/s-l1200.jpg" alt="iPhone 17 Pro Max" width="250" height="250">
+                    </td>
+                    <td align="left">
+                        <strong>iPhone 17 Pro Max</strong>
+                    </td>
+                    <td align="left">
+                        Teléfono inteligente de gama alta enfocado en el máximo rendimiento, con un sistema de cámaras Pro avanzado, pantalla Super Retina XDR de gran formato y diseño resistente.
+                    </td>
+                </tr>
+
+                <!-- Producto 2: Apple Vision Pro 2 -->
+                <tr>
+                    <td align="center" width="250">
+                        <img src="https://www.apple.com/newsroom/images/media/introducing-apple-vision-pro/Apple-WWDC23-Vision-Pro-glass-230605_big.jpg.large.jpg" alt="Apple Vision Pro 2" width="250" height="250">
+                    </td>
+                    <td align="left">
+                        <strong>Apple Vision Pro 2</strong>
+                    </td>
+                    <td align="left">
+                        Visor de computación espacial revolucionario que integra contenido digital con el mundo físico de forma fluida.
+                    </td>
+                </tr>
+
+                <!-- Producto 3: AirPods Max -->
+                <tr>
+                    <td align="center" width="250">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi6sTI-aokuWkWRvPABjT6Cs9iKCwRTZ2BEhD2q7z6BRVqJUppx244UeA&s=10" alt="AirPods Max" width="250" height="250">
+                    </td>
+                    <td align="left">
+                        <strong>AirPods Max</strong>
+                    </td>
+                    <td align="left">
+                        Audífonos supraaurales con cancelación activa de ruido, audio espacial y un diseño acústico de alta fidelidad.
+                    </td>
+                </tr>
+
+                <!-- Producto 4: Mac Studio -->
+                <tr>
+                    <td align="center" width="250">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnc7mNAofJJtJ-UNX30MQ56HGbTnD_-Y4wwcH91ooGkQ&s=10" alt="Mac Studio" width="250" height="250">
+                    </td>
+                    <td align="left">
+                        <strong>Mac Studio</strong>
+                    </td>
+                    <td align="left">
+                        Computadora de escritorio compacta con un rendimiento extraordinario para profesionales y creadores de contenido.
+                    </td>
+                </tr>
+
+                <!-- Producto 5: HomePod -->
+                <tr>
+                    <td align="center" width="250">
+                        <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-select-midnight-202210_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&.v=N0JQcmtNWnVWeGozUXcxK2ZBcC9vYnJwcTNiTEVDcmNpblFkZGNJMzB3UzErL0U3SmlkcS9OZS9IVndZZXlkdkRPUU9BWmJWRXFZMEJicERYSS9tMXZSMms0cXVmbUo2VFlmTXZxMTAzZ3hPUzlQRFJVb2xpY0RHOGc3Si9GUkc" alt="HomePod" width="250" height="250">
+                    </td>
+                    <td align="left">
+                        <strong>HomePod</strong>
+                    </td>
+                    <td align="left">
+                        Altavoz inteligente con sonido de alta fidelidad, integración con Siri y control para el hogar inteligente.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <!-- Sección del formulario de contacto -->
+    <div id="contacto" align="center">
+        <h2>Contacto</h2>
+        <div id="contenedor-formulario">
+            <form onsubmit="enviarMensaje(event)">
+                <label for="comentario">Déjanos tu comentario:</label><br><br>
+                <textarea id="comentario" rows="4" cols="50" required placeholder="Escribe tu comentario aquí..."></textarea><br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <!-- Mensaje que aparece al presionar Enviar -->
+        <p id="mensajeRespuesta" hidden>Gracias</p>
+    </div>
+
+    <br><hr><br>
+
+    <!-- Pie de página con tus datos académicos -->
+    <footer align="center">
+        Esparza Martínez Leonardo 5-J 24308051280834
+    </footer>
+
+    <!-- Función simple para cambiar el formulario por el mensaje Gracias al enviar -->
+    <script>
+        function enviarMensaje(event) {
+            // Evita que la página se reinicie
+            event.preventDefault();
+            // Oculta las casillas de texto
+            document.getElementById('contenedor-formulario').hidden = true;
+            // Muestra el texto "Gracias"
+            document.getElementById('mensajeRespuesta').hidden = false;
+        }
+    </script>
+
+</body>
+</html>
