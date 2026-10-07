@@ -11,7 +11,7 @@
         <h1>Tienda Apple</h1>
     </header>
 
-    <!-- Barra de navegación con opciones que parecen enlaces pero no llevan a otras páginas -->
+    <!-- Barra de navegación con opciones que parecen enlaces pero no cambian de página -->
     <nav align="center">
         <a href="#">iPhone 17 Pro Max</a> |
         <a href="#">Apple Vision Pro 2</a> |
@@ -108,17 +108,29 @@
 
     <br><hr><br>
 
-    <!-- Sección del formulario de contacto -->
+    <!-- Sección del formulario de contacto (sin el campo de Asunto) -->
     <div id="contacto" align="center">
         <h2>Contacto</h2>
         <div id="contenedor-formulario">
             <form onsubmit="enviarMensaje(event)">
-                <label for="comentario">Déjanos tu comentario:</label><br><br>
-                <textarea id="comentario" rows="4" cols="50" required placeholder="Escribe tu comentario aquí..."></textarea><br><br>
+                <!-- Campo Nombre -->
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <!-- Campo Correo Electrónico -->
+                <label for="correo">Correo Electrónico:</label><br>
+                <input type="email" id="correo" name="correo" required><br><br>
+
+                <!-- Campo Mensaje -->
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required placeholder="Escribe tu mensaje aquí..."></textarea><br><br>
+
+                <!-- Botón de Envío -->
                 <input type="submit" value="Enviar">
             </form>
         </div>
-        <!-- Mensaje que aparece al presionar Enviar -->
+
+        <!-- Mensaje simple que aparece al presionar Enviar -->
         <p id="mensajeRespuesta" hidden>Gracias</p>
     </div>
 
@@ -129,12 +141,12 @@
         Esparza Martínez Leonardo 5-J 24308051280834
     </footer>
 
-    <!-- Función simple para cambiar el formulario por el mensaje Gracias al enviar -->
+    <!-- Función en JavaScript para ocultar los campos y mostrar "Gracias" al enviar -->
     <script>
         function enviarMensaje(event) {
-            // Evita que la página se reinicie
+            // Evita que la página se recargue
             event.preventDefault();
-            // Oculta las casillas de texto
+            // Oculta las casillas del formulario
             document.getElementById('contenedor-formulario').hidden = true;
             // Muestra el texto "Gracias"
             document.getElementById('mensajeRespuesta').hidden = false;
